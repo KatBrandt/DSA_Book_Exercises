@@ -52,3 +52,40 @@ puts "#2. #{answer == expected}"
 # "the quick brown box jumps over a lazy dog" contains all the letters of the alphabet
 # except the letter, "f". The function should have a time complexity of O(N).
 
+def missing_letter(string)
+  letter_count = Hash.new(0)
+  string.chars.each do |letter|
+    letter_count[letter] += 1
+  end
+  ("a".."z").find do |alpha|
+    letter_count[alpha] == 0
+  end
+end
+
+#test
+str = "the quick brown box jumps over a lazy dog"
+expected = "f"
+answer = missing_letter(str)
+puts "3. #{answer == expected}"
+
+# 4. Write a function that returns the first non-duplicated character in a string.
+# For example, the string, "minimum" has two characters that only exist
+# once—the "n" and the "u", so your function should return the "n", since it
+# occurs first. The function should have an efficiency of O(N).
+
+def first_non_dup(string)
+  counter = Hash.new(0)
+  string.chars.each do |letter|
+      counter[letter] += 1
+  end
+  counter.find do |letter, count|
+    count == 1
+  end.first
+end
+
+# test
+str = "minimum"
+expected = "n"
+answer = first_non_dup(str)
+puts "4. #{expected == answer}"
+
