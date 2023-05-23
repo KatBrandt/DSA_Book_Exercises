@@ -75,7 +75,7 @@ puts "3. #{answer == expected}"
 
 def first_non_dup(string)
   counter = Hash.new(0)
-  string.chars.each do |letter|
+  string.each_char do |letter|
       counter[letter] += 1
   end
   counter.find do |letter, count|
