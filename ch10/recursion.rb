@@ -24,7 +24,7 @@ def print_numbers(nums)
       puts n 
     else
      print_numbers(n)
-    end
+    end 
   end
 end
 
